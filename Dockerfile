@@ -6,10 +6,14 @@ COPY . .
 
 RUN apt-get update && apt-get install -y maven
 
+# Build the project
 RUN mvn clean package -DskipTests
 
-# 🕵️ Show what’s inside target/
-RUN ls -la target/
+# 💥 Add this debug step to inspect the contents of target
+RUN echo "📁 Contents of /app/target:" && ls -la /app/target
+
+# 💥 Also check current working dir
+RUN echo "📁 Current dir:" && pwd && echo "📁 Full contents:" && ls -laR /app
 
 EXPOSE 8080
 
