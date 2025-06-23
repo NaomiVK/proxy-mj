@@ -17,4 +17,4 @@ RUN echo "📁 Current dir:" && pwd && echo "📁 Full contents:" && ls -laR /ap
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/midjourney-proxy-*.jar"]
+CMD ["java", "-jar", "target/midjourney-proxy-2.6.3.jar"]
